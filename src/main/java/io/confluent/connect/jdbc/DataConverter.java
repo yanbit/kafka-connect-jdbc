@@ -53,6 +53,8 @@ public class DataConverter {
       throws SQLException {
     // TODO: Detect changes to metadata, which will require schema updates
     SchemaBuilder builder = SchemaBuilder.struct().name(tableName);
+    System.out.println("=====builder====="+builder);
+    System.out.println("=====metadata====="+metadata);
     for (int col = 1; col <= metadata.getColumnCount(); col++) {
       addFieldSchema(metadata, col, builder);
     }
